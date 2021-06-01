@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Avatar from '../components/Avatar' 
-import {MicrophoneIcon, ViewGridIcon} from '@heroicons/react/solid'
+import {MicrophoneIcon, ViewGridIcon, BeakerIcon} from '@heroicons/react/solid'
+import {SearchIcon} from "@heroicons/react/outline"
 export default function Home() {
   return (
     <div>
@@ -24,13 +25,27 @@ export default function Home() {
         <p className="link">Images</p>
 
         {/*  Icon */} 
-        <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover:bg-gray-600 cursor-pointer"/>
+        <ViewGridIcon className="h-10 w-10 rounded-full cursor-pointer hover:bg-gray-100"/>
         {/*  Avatar */} 
-        <Avatar url="https://randomuser.me/api/portraits/men/75.jpg"></Avatar>
+        <Avatar  url="https://randomuser.me/api/portraits/men/75.jpg"></Avatar>
        </div>
      </header>
      {/* Body */} 
+     <form className="flex flex-col items-center mt-44 flex-grow ">
+        <Image height={100} width={300} src='https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'/>
 
+        <div className="flex w-full mt-5 hover:shadow-lg focus-within:shadow-lg max-w-md rounded-full border-gray-200 px-5 py-3 items-center sm:max-w-xl lg:max-w-2xl ">
+          <SearchIcon className="h-5 mr-5 text-gray-500" />
+          <input type="text" className="flex-grow
+          focus:outline-none"/>
+          <MicrophoneIcon className="h-5 ml-5"/>
+        </div>
+
+        <div>
+          <button className="btn">Google Search</button>
+          <button className="btn">I'm feeling lucky</button>
+        </div>
+      </form>
      {/* Footer */} 
     </div>
   )
